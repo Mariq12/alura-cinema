@@ -1,5 +1,5 @@
-import styles from './Pie.module.css';
-import logo from './logo.png';
+import styles from './Footer.module.css';
+import logo from './logo-alura.png';
 
 function Footer() {
     return (
