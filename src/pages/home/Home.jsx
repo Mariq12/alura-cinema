@@ -1,5 +1,3 @@
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
 import Banner from "../../components/banner/Banner";
 import Title from "../../components/title/Title";
 import Card from "../../components/card/Card";
@@ -11,7 +9,6 @@ function Home() {
 
     return (
         <>
-            <Header />
             <Banner img="home" color="#154580" />
             <Title>
                 <h1>A place to store your favorite videos</h1>
@@ -21,7 +18,6 @@ function Home() {
                     return <Card {...video} key={video.id} />
                 })}
             </section>
-            <Footer />
         </>
     );
 }
