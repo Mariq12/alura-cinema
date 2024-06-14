@@ -43,4 +43,4 @@ Ejecutar el comando:
 
     npm i react-router-dom
 
-Está dependecia de react se utiliza para trabajar con las rutas.
+[react-router-dom](https://www.npmjs.com/package/react-router-dom) es una dependecia de react que se utiliza para trabajar con las rutas.
