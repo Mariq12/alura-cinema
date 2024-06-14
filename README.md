@@ -34,3 +34,7 @@ Se ejecuta el proyecto con:
 
      npm start
 Inicia el proyecto en [http://localhost:5173/](http://localhost:5173/) 
+
+## Fuentes
+Se utiliza la familia de fuentes **Montserrat** traida desde [Google Fonts](https://fonts.google.com/specimen/Montserrat?query=mon) y se agrega en el **index.html**.
+
