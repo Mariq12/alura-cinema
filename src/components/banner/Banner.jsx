@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Banner({ img, color }) {
     return (
         <div
-            className={styles.capa}
+            className={styles.layer}
             style={{ backgroundImage: `url("/img/banner-${img}.png")` }}
         >
             <div className={styles.gradient} style={{ background: `${color}` }}>
