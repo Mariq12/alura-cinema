@@ -29,10 +29,11 @@ export function useFavoritesContext() {
         let newList = [...favorite];
         if (!duplicateFavorite) {
             newList.push(newFavorite);
-           setFavorite(newList);
+            setFavorite(newList);
+        } else {
+            newList = favorite.filter((item) => item.id !== newFavorite.id);
+            setFavorite(newList);
         }
-        newList = favorite.filter((item) => item.id !== newFavorite.id);
-        setFavorite(newList);
     }
-    return { favorite, addFavorite};
+    return { favorite, addFavorite };
 }
