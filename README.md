@@ -44,3 +44,8 @@ Ejecutar el comando:
     npm i react-router-dom
 
 [react-router-dom](https://www.npmjs.com/package/react-router-dom) es una dependecia de react que se utiliza para trabajar con las rutas.
+
+## Herramientas
+Uso de la extensión [React Context DevTool](https://chromewebstore.google.com/detail/react-context-devtool/oddhnidmicpefilikhgeagedibnefkcf?hl=es). Es una herramienta de depuración para React Context y useReducer API
+
+![Imagen-react-context](image.png)
