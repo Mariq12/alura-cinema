@@ -1,7 +1,8 @@
 # <p align="center">ALURA CINEMA</p>
 
-![En proceso](https://img.shields.io/badge/status-en_proceso-red)
- + ⏳ **Curso de React: practicando React con JS.**
+![Completado](https://img.shields.io/badge/status-completado-brightgreen) 
+
++ ✔️ **Curso de React: practicando React con JS.**
 
 ## Creación de proyecto
 Ejecutar el comando:
@@ -45,6 +46,19 @@ Ejecutar el comando:
 
 [react-router-dom](https://www.npmjs.com/package/react-router-dom) es una dependecia de react que se utiliza para trabajar con las rutas.
 
+## Opcional
+Instalar [react-icons](https://react-icons.github.io/react-icons/search/#q=MdFavorite)
+
+    npm install react-icons
+
+Realizar la importación:
+
+    import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+
+## Uso de un servidor falso
+    https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos
+
+Repositorio en [GitHub](https://github.com/Mariq12/alura-cinema-api) de la API.
 ## Herramientas
 Uso de la extensión [React Context DevTool](https://chromewebstore.google.com/detail/react-context-devtool/oddhnidmicpefilikhgeagedibnefkcf?hl=es). Es una herramienta de depuración para React Context y useReducer API
 
