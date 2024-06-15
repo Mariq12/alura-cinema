@@ -1,19 +1,27 @@
 import Title from "../../components/title/Title.jsx";
 import Banner from "../../components/banner/Banner.jsx";
 import styles from "./Player.module.css";
-import data from "../../data/db.json"; // Importa el objeto completo
 import { useParams } from "react-router-dom";
 import NotFound from "../../components/notFound/NotFound.jsx";
+import { useState, useEffect } from "react";
 
 function Player() {
+    const [video, setVideo] = useState(null); // Use null as the initial state
     const parameters = useParams();
-    const { videos } = data; // Accede al array de videos
-    console.log('Videos:', videos);
-    const video = Array.isArray(videos) ? videos.find(video => video.id === Number(parameters.id)) : null;
-    console.log('Selected video:', video);
 
-    if (!video) return <NotFound />;
-    
+    useEffect(() => {
+        fetch(`https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos?id=${parameters.id}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.length > 0) {
+                    setVideo(data[0]);
+                } else {
+                    setVideo(null);
+                }
+            });
+    }, [parameters.id]);
+
+    if (video === null) return <NotFound />;
 
     return (
         <>
@@ -22,10 +30,15 @@ function Player() {
                 <h1>Player</h1>
             </Title>
             <section className={styles.container}>
-                <iframe width="100%" height="100%"
+                <iframe
+                    width="100%"
+                    height="100%"
                     src={video.link}
                     title={video.title}
-                    frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                ></iframe>
             </section>
         </>
     );

@@ -8,19 +8,10 @@ function Home() {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
-        fetch(
-            "https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos"
-        )
+        fetch("https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos")
             .then((response) => response.json())
             .then((data) => {
-                if (Array.isArray(data)) {
-                    setVideos(data);
-                } else {
-                    console.error("Expected an array from the API, but got:", data);
-                }
-            })
-            .catch((error) => {
-                console.error("Error fetching data:", error);
+                setVideos(data);
             });
     }, []);
 
