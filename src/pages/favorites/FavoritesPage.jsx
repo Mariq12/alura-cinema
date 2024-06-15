@@ -1,14 +1,14 @@
 import Banner from '../../components/banner/Banner';
-import styles from './Favorites.module.css';
+import styles from './FavoritesPage.module.css';
 import Title from '../../components/title/Title';
 import Card from '../../components/card/Card';
 import { useFavoritesContext } from '../../context/Favorites';
 
-function Favorites() {
+function FavoritesPage() {
     const { favorite } = useFavoritesContext();
 
     if (!favorite) return null;
- 
+
     return (
         <>
             <Banner img="favorite" color="#44d97d" />
@@ -24,4 +24,4 @@ function Favorites() {
     );
 }
 
-export default Favorites;
+export default FavoritesPage;

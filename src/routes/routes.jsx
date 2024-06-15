@@ -1,4 +1,4 @@
-import Favorites from "../pages/favorites/Favorites.jsx";
+import Favorites from "../pages/favorites/FavoritesPage.jsx";
 import Home from "../pages/home/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Player from "../pages/player/Player.jsx";
