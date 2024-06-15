@@ -11,7 +11,7 @@ function Home() {
         <>
             <Banner img="home" color="#154580" />
             <Title>
-                <h1>A place to store your favorite videos</h1>
+            <h1>Un lugar para guardar sus videos favoritos </h1>
             </Title>
             <section className={styles.container}>
                 {videos.map((video) => {
