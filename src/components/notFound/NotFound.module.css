@@ -9,3 +9,8 @@
     font-size: 12em;
     color: var(--red);
   }
+  .img_error {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+  }

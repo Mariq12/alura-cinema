@@ -7,11 +7,11 @@ import { useState, useEffect } from "react";
 
 function Player() {
     const [video, setVideo] = useState(null);
-    const [loading, setLoading] = useState(true); // Estado de carga inicial
+    const [loading, setLoading] = useState(true);
     const parameters = useParams();
 
     useEffect(() => {
-        setLoading(true); // Iniciar el estado de carga al inicio de cada solicitud
+        setLoading(true);
         fetch(`https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos?id=${parameters.id}`)
             .then(response => response.json())
             .then(data => {
