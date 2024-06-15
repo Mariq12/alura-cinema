@@ -2,14 +2,22 @@
     background-color: var(--black);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .footer h2 {
     color: var(--white);
-    font-size: 20px;
+    font-size: 18px;
+    text-align: center;
 }
 
-h2 img {
+img {
     width: 50px;
+}
+
+.footer p {
+    color: var(--white);
+    font-size: 16px;
+    margin-right: 1.5rem;
+
 }

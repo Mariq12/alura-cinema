@@ -1,16 +1,16 @@
 import { useFavoritesContext } from "../../context/Favorites";
 import styles from "./Card.module.css";
-import iconFavorito from "./iconFavorito.png";
-import iconNoFavorito from "./iconNoFavorito.png";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-
 
 function Card({ id, layer, title }) {
     const { favorite, addFavorite } = useFavoritesContext();
     const isFavorite = favorite.some(fav => fav.id === id);
-    const icon = isFavorite ? iconFavorito : iconNoFavorito;
 
+    const handleFavoriteClick = () => {
+        addFavorite({ id, title, layer });
+    };
 
     return (
         <div className={styles.container}>
@@ -18,12 +18,16 @@ function Card({ id, layer, title }) {
                 <img src={layer} alt={title} className={styles.layer} />
                 <h2>{title}</h2>
             </Link>
-            <img
-                src={icon}
-                alt="Icono favorito"
-                className={styles.favorite}
-                onClick={() => addFavorite({ id, title, layer })}
-            />
+            <div 
+                className={`${styles.favorite} ${isFavorite ? "is-favorite" : ""}`} 
+                onClick={handleFavoriteClick}
+            >
+                {isFavorite ? (
+                    <MdFavorite size={25} color="red" />
+                ) : (
+                    <MdFavoriteBorder size={25} color="gray" />
+                )}
+            </div>
         </div>
     );
 }
@@ -35,3 +39,4 @@ Card.propTypes = {
 };
 
 export default Card;
+

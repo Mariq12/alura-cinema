@@ -1,3 +1,4 @@
+import Footer from "../../components/footer/Footer";
 import Container from "../../components/container/Container";
 import Header from "../../components/header/Header";
 import FavoritesProvider from "../../context/Favorites";
@@ -13,6 +14,7 @@ function BasePage() {
                     <Outlet />
                 </Container>
             </FavoritesProvider>
+            <Footer />
         </main>
     )
 } 

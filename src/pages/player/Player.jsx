@@ -6,10 +6,12 @@ import NotFound from "../../components/notFound/NotFound.jsx";
 import { useState, useEffect } from "react";
 
 function Player() {
-    const [video, setVideo] = useState(null); // Use null as the initial state
+    const [video, setVideo] = useState(null);
+    const [loading, setLoading] = useState(true); // Estado de carga inicial
     const parameters = useParams();
 
     useEffect(() => {
+        setLoading(true); // Iniciar el estado de carga al inicio de cada solicitud
         fetch(`https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos?id=${parameters.id}`)
             .then(response => response.json())
             .then(data => {
@@ -18,8 +20,15 @@ function Player() {
                 } else {
                     setVideo(null);
                 }
+                setLoading(false); 
+            })
+            .catch(() => {
+                setVideo(null);
+                setLoading(false); 
             });
     }, [parameters.id]);
+
+    if (loading) return <div>Loading...</div>; 
 
     if (video === null) return <NotFound />;
 
