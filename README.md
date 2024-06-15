@@ -62,6 +62,8 @@ Repositorio en [GitHub](https://github.com/Mariq12/alura-cinema-api) de la API.
 ## Herramientas
 Uso de la extensión [React Context DevTool](https://chromewebstore.google.com/detail/react-context-devtool/oddhnidmicpefilikhgeagedibnefkcf?hl=es). Es una herramienta de depuración para React Context y useReducer API
 
+![Imagen-react-context](image.png)
+
 ## Deploy del proyecto en Vercel
 1. Se crea una carpeta dist ejecutando:
 
@@ -85,10 +87,10 @@ Uso de la extensión [React Context DevTool](https://chromewebstore.google.com/d
 
 
 ## Ver Demo
-### Parte 1
 
-
+![alura-cinema](https://github.com/Mariq12/alura-cinema/assets/101030215/fa378c08-d397-4796-8319-12fe70614ec5)
 
 Ver Demo en [Vercel](https://alura-cinema-seven.vercel.app/).
 
-![Imagen-react-context](image.png)
+## Tecnologías
+React + Vite
