@@ -3,6 +3,7 @@ import Banner from "../../components/banner/Banner.jsx";
 import styles from "./Player.module.css";
 import data from "../../data/db.json"; // Importa el objeto completo
 import { useParams } from "react-router-dom";
+import NotFound from "../../components/notFound/NotFound.jsx";
 
 function Player() {
     const parameters = useParams();
@@ -11,9 +12,8 @@ function Player() {
     const video = Array.isArray(videos) ? videos.find(video => video.id === Number(parameters.id)) : null;
     console.log('Selected video:', video);
 
-    if (!video) {
-        return <div>Video not found</div>;
-    }
+    if (!video) return <NotFound />;
+    
 
     return (
         <>

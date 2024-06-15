@@ -6,6 +6,7 @@ import Favorites from "../pages/favorites/Favorites.jsx";
 import Home from "../pages/home/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Player from "../pages/player/Player.jsx";
+import NotFound from "../components/notFound/NotFound.jsx";
 
 function AppRoutes() {
     return (
@@ -17,6 +18,7 @@ function AppRoutes() {
                         <Route path="/" element={<Home />}></Route>
                         <Route path="favorites" element={<Favorites />}></Route>
                         <Route path="/:id" element={<Player />}></Route>
+                        <Route path="*" element={<NotFound />}></Route>
                     </Routes>
                 </FavoritesProvider>
             </Container>
