@@ -2,16 +2,33 @@ import Banner from "../../components/banner/Banner";
 import Title from "../../components/title/Title";
 import Card from "../../components/card/Card";
 import styles from "./Home.module.css";
-import data from "../../data/db.json";
+import { useState, useEffect } from "react";
 
 function Home() {
-    const videos = data.videos;
+    const [videos, setVideos] = useState([]);
+
+    useEffect(() => {
+        fetch(
+            "https://my-json-server.typicode.com/Mariq12/alura-cinema-api/videos"
+        )
+            .then((response) => response.json())
+            .then((data) => {
+                if (Array.isArray(data)) {
+                    setVideos(data);
+                } else {
+                    console.error("Expected an array from the API, but got:", data);
+                }
+            })
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+            });
+    }, []);
 
     return (
         <>
             <Banner img="home" color="#154580" />
             <Title>
-            <h1>Un lugar para guardar sus videos favoritos </h1>
+                <h1>Un lugar para guardar sus videos favoritos </h1>
             </Title>
             <section className={styles.container}>
                 {videos.map((video) => {
